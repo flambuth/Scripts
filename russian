@@ -1,0 +1,9 @@
+#!/bin/bash
+
+read -p "Do you feel lucky, punk!" -n 1 -r
+echo
+
+if [[ $REPLY =~ ^[Yy]$ ]]
+then
+	[ $[ $RANDOM % 6 ] == 0 ] && echo "BANG. You're dead" || echo "CLICK. You're lucky"
+fi	

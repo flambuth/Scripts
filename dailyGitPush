@@ -1,0 +1,13 @@
+#!/bin/bash
+cd /Users/fredricklambuth/codeup-data-science/python-exercises
+git add .
+git commit -m '$(echo $(date))'
+git push -u
+
+cd /Users/fredricklambuth/codeup-data-science/database-exercises
+git add .
+git commit -m '$(echo $(date))'
+git push -u
+
+#make some standard error rules in case something goes wrong
+

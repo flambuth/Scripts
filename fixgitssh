@@ -1,0 +1,5 @@
+#!/bin/bash
+
+ssh-add -K ~/.ssh/id_rsa
+echo "This got reset after that 30 minute update."
+

@@ -1,0 +1,35 @@
+#!/bin/bash
+#That thing up there is telling your command line that this should be run using the binary 
+#file bash
+
+#For this script to runn on the command line, you'll need to save it and reference 
+#that save location in your $PATH
+#I have this at the end of  my ~/bash_profile
+#	export PATH="/Users/fredricklambuth/Scripts:$PATH"	
+#/Users/fredricklambuth/Scripts is where I keep my own scripts.
+
+#You'll also have to allow the owner of the file to execute it.
+#chmod 700 gitpushhere
+
+#Either source the ~/.bash_profile or start a new terminal to make the changes to your 
+#bash profile take effect.
+
+#Outputs to the user the conditions of the script.
+#Please only runn the command while your $(pwd) has been git init'ed
+echo 'THIS WILL ONLY WORK IF YOU ARE IN THE DIRECTORY THAT HAS BEEN INITIALIZED FOR GIT'
+
+#This outputs a question and then waits for the user to type in the information that will
+#be stored in the variable $comment
+echo 'What comment to add to the commit?'
+read comment
+
+#These are the commands you normally do, in sequence
+git add .
+#This is the only part that changes. The $comment variable is made from the question
+#asked earler to the user. It's not robust. Dont use punctuation.
+git commit -m "$comment"
+git push -u
+
+#If you don't see this, it did not work. 
+#However, seeing this does not guaranteee it worked.
+echo 'EXCELSIOR'
