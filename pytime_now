@@ -1,0 +1,17 @@
+#!/usr/local/anaconda3/bin/python
+
+#!/bin/bash
+
+function current_datetime{
+python - <<END
+import datetime
+print datetime.datetime.now()
+END
+}
+
+# Call it
+current_datetime
+
+# Call it and capture the output
+DT=$(current_datetime)
+echo Current date and time: $DT
